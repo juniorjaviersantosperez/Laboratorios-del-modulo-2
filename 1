@@ -1,0 +1,19 @@
+# Programación de tareas para limpieza del directorio /tmp usando at y crontab
+
+# Editar el crontab del usuario root (abre el editor nano por defecto)
+sudo crontab -e
+
+# Ver el contenido actual del directorio /tmp antes de la ejecución
+ls /tmp
+
+# Programar con 'at' la eliminación del contenido de /tmp dentro de 1 minuto
+at now + 1 minute
+# Dentro del prompt de at> escribir el siguiente comando:
+rm -rf /tmp/*
+# Luego presionar Ctrl + D para guardar y salir del modo at
+
+# Verificar que el job fue programado correctamente
+atq
+
+# Esperar a que se ejecute el trabajo, luego verificar si el contenido de /tmp fue borrado
+ls /tmp
