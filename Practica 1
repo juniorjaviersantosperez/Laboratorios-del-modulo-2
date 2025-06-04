@@ -1,0 +1,29 @@
+# Actualizar la lista de paquetes
+sudo apt-get update
+
+# Intento con error de tipeo ('upgrate'), se corrige después
+sudo apt-get upgrate   # (comando incorrecto)
+sudo apt-get upgrade   # (comando correcto)
+
+# Verificar el archivo de fuentes de paquetes (repositorios)
+cat /etc/apt/sources.list
+
+# Limpiar pantalla
+clear
+
+# Buscar el paquete 'bashtop' (monitor del sistema con interfaz)
+apt search bastop      # (con error tipográfico)
+apt search bashtop     # (comando correcto)
+
+# Ejecutar bashtop (si ya estuviera instalado)
+bashtop
+
+# Eliminar bashtop completamente
+sudo apt purge bashtop -y
+
+# Eliminar dependencias que ya no se necesitan (con error tipográfico primero)
+sudo apt autoromove -y     # (comando incorrecto)
+sudo apt autoremove -y     # (comando correcto)
+
+# Limpiar pantalla
+clear
