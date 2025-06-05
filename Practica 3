@@ -1,0 +1,28 @@
+# Listar discos conectados
+sudo fdisk -l
+
+# Crear sistema de archivos EXT4 en la partición /dev/sdc1
+sudo mkfs.ext4 /dev/sdc1
+
+# Crear carpeta para punto de montaje
+mkdir -p /home/juniorsantos/Desktop/ITLA
+
+# Montar la partición en la carpeta creada
+sudo mount /dev/sdc1 /home/juniorsantos/Desktop/ITLA
+
+# Crear archivo dentro del punto montado para probar
+cd /home/juniorsantos/Desktop/ITLA
+sudo touch AdrianAlcantara.txt
+
+# Verificar estado de los discos
+df -h
+
+# Desmontar correctamente
+sudo umount /home/juniorsantos/Desktop/ITLA
+
+# Montar nuevamente la partición pero ahora en /mnt
+sudo mount /dev/sdc1 /mnt
+
+# Verificar el contenido del nuevo punto de montaje
+cd /mnt
+ls
